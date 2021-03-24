@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap');
+
+body{
+    overflow-x: hidden;
+}
+
+#navbg{
+    background-color: #F9F9F9;
+    height: 100px;
+}
+
+.nav-link.active{
+    background-color: #868585 !important;
+}
+
+a.nav-link {
+    color: black;
+}
+
+img#logo {
+    width: 228px;
+    border-radius: 20px;
+}
+
+div#navbarColor1 {
+    position: relative;
+    left: 40%;
+}
+
+.jumbotronnews{
+    width: 100%;
+    height: 600px;
+    background-image: radial-gradient(circle farthest-corner at 0 50%,#10c9cd,#3c5ccf);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 46px;
+}
+
+.jumbotronnewstwo{
+    width: 100%;
+    height: 300px;
+    background-image: radial-gradient(circle farthest-corner at 0 50%,#10c9cd,#3c5ccf);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 46px;
+}
+
+.jumbo{
+    display: flex;
+}
+
+#smalljumbo{
+    font-family: 'Dosis', sans-serif;
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000000;
+    width: fit-content;
+}
+
+#bigjumbo {
+    font-family: 'Dosis', sans-serif;
+    font-size: 6rem;
+    background-image: linear-gradient(to right bottom, #000000, #0e0e0e, #181818, #202020, #282828);
+    color: #fff;
+    width: 795px;
+    text-align: center;
+    background-image: url(https://techcrunch.com/wp-content/uploads/2021/03/Apple_expands-free-professional-learning-to-help-teachers-champion-creativity_032321_big.jpg.large_2x.jpg?w=1390&crop=1);
+    height: 533px;
+    opacity: 0.7;
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-shadow: 2px 2px 4px #000000;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.row.rowstyles {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#bodycontainer{
+    max-width: 90%;
+    background-color: #EFEFEF;
+    height: 900px;
+    border-radius: 10px;
+}
+
+.newscolumn{
+    background-color: #F4F4F4;
+    height: 827px;
+    overflow-y: auto;
+}
+
+.newscolumn2{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contentcolumn{
+    background-color: #E8E8E8;
+    margin-left: 12px;
+    height: 400px;
+    margin-left: 94px;
+}
+
+.newscolumn, .contentcolumn {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+#border{
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.profdiv {
+    margin: 20px 0;
+}
+
+.profilecols {
+    width: 32%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    margin: 4px;
+    float: left;
+}
+
+#mediabody{
+    height: 820px;
+    width: 98%;
+}
+
+
+/* Login Form */
+
+form#loginform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    top: 50px;
+}
+
+h2.logintitle {
+    position: relative;
+    margin-top: 20px;
+}
+
+.form-group {
+    width: 36%;
+}
+
+button.btn.btn-primary {
+    margin-bottom: 84px;
+    width: 200px;
+}
+
+.form-control {
+    width: 475px !important;
+}
+
+div#signmeup {
+    background-color: aliceblue;
+    border-bottom-left-radius: 16px;
+}
+div#logmein {
+    background-color: #EEEEEE;
+    border-bottom-right-radius: 16px;
+}
+
+#bodycontainer2 {
+    max-width: 90%;
+    background-color: #EFEFEF;
+    height: 900px;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+
+
+
+
+
+/* Media Queries */
+
+@media screen and (max-width: 1276px) {
+    .contentcolumn{
+        display: none;
+    }
+    
+}
