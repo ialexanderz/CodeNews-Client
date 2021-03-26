@@ -7,7 +7,7 @@ export default function JumboTextTwo() {
 
     useEffect(() =>{
         const getUser = async() => {
-            const getUser = await axios.get("http://localhost:4000/users/");
+            const getUser = await axios.get(`${process.env.REACT_APP_SERVER_URL}/`);
 
             console.log(getUser);
         }

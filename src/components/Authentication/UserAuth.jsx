@@ -31,7 +31,7 @@ export default function UserAuth(props) {
         confirmpassword: confirmpassword
       }
 
-      const registerResponse = await axios.post(`${process.env.REACT_APP_Server_Base_URL}/users/register`, registerBody);
+      const registerResponse = await axios.post(`${process.env.REACT_APP_SERVER_URL}/users/register`, registerBody);
 
 
 
@@ -66,7 +66,7 @@ export default function UserAuth(props) {
         password: loginpassword
       }
 
-      const loginResponse = await axios.post(`${process.env.REACT_APP_Server_Base_URL}/users/login`, loginBody);
+      const loginResponse = await axios.post(`${process.env.REACT_APP_SERVER_URL}/users/login`, loginBody);
 
       const token = loginResponse.data.token;
       localStorage.setItem('jwtToken', token);

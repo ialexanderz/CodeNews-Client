@@ -18,7 +18,7 @@ export default class Profile extends Component {
   }
 
   componentDidMount = () => {
-    axios.get("http://localhost:4000/users/").then(response => {
+    axios.get(`${process.env.REACT_APP_SERVER_URL}/`).then(response => {
       this.setState({
         user: response.data.userid
       });

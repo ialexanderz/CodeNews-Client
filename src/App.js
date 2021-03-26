@@ -10,6 +10,7 @@ import Jobs from './components/Body/Jobs';
 import Questions from './components/Body/Questions';
 import jwt_decode from 'jwt-decode';
 import Profile from './components/Dashboard/Profile';
+console.log(process.env.REACT_APP_SERVER_URL);
 
 
 
