@@ -45,7 +45,7 @@ function App() {
     <Router>
     <HeaderNavbar currentUser={currentUser} handleLogout={handleLogout} />
       <Switch>
-        <Route path="/" exact={true}>
+        <Route exact path="/">
           <JumboText />
           <Body />
         </Route>
