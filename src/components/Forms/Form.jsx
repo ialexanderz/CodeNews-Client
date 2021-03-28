@@ -1,25 +1,52 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Form } from 'bootstrap-4-react';
+import axios from 'axios';
 
 export default function Postform(){
+
+  const [title, setTitle] = useState('');
+  const [post_content, setContent] = useState('');
+  const [selectedFile, setSelectedFile] = useState('');
+
+
+  function handleSubmit(e){
+    e.preventDefault();
+    console.log(post_content);
+    const newPost ={
+      title,
+      post_content,
+      setSelectedFile
+    }
+    axios.post(`${process.env.REACT_APP_SERVER_URL}/posts`, newPost)
+  }
     return (
         <>
-        <Form>
+        <Form onSubmit={handleSubmit}>
             <Form.Group>
-            <label htmlFor="creator">Username</label>
-            <Form.Input className="commentform" type="text" id="creator" placeholder="Username" />
+              <label htmlFor="title">Post Title</label>
+              <Form.Input 
+              onChange = { e => setTitle(e.target.value)} 
+              value={title}
+              className="commentform"  
+              type="text" id="title" 
+              placeholder="Post Title" />
             </Form.Group>
             <Form.Group>
-            <label htmlFor="title">Post Title</label>
-            <Form.Input className="commentform"  type="text" id="title" placeholder="Post Title" />
+              <label htmlFor="content">Content</label>
+              <Form.Textarea 
+              onChange = {e => setContent(e.target.value)}
+              value={post_content} 
+              className="commentform"  
+              id="content" 
+              rows="3">
+              </Form.Textarea>
             </Form.Group>
             <Form.Group>
-            <label htmlFor="comments">Comments</label>
-            <Form.Textarea className="commentform"  id="comments" rows="3"></Form.Textarea>
-            </Form.Group>
-            <Form.Group>
-            <label htmlFor="upload">Upload Image</label>
-            <Form.File id="upload"/>
+            <label htmlFor="selectedFile">Upload Image</label>
+              <Form.File 
+              onChange = {e => setSelectedFile(e.target.File)}
+              value={selectedFile} 
+              id="upload"/>
             </Form.Group>
             <button className="postsubmit" type="submit">Submit</button>
       </Form>

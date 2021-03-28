@@ -39,7 +39,7 @@ div#navbarColor1 {
 
 .jumbotronnewstwo{
     width: 100%;
-    height: 300px;
+    height: 160px;
     background-image: radial-gradient(circle farthest-corner at 0 50%,#10c9cd,#3c5ccf);
     display: flex;
     justify-content: center;
@@ -49,6 +49,13 @@ div#navbarColor1 {
 
 .jumbo{
     display: flex;
+}
+
+.row.rowstyles {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
 }
 
 #smalljumbo{
@@ -187,12 +194,26 @@ input#upload {
     width: 700px;
 }
 
-input.commentform, textarea#comments {
+input.commentform, textarea#content {
     width: 385px !important;
 }
 
 .col-6.col-md-3.contentcolumn {
     height: fit-content;
+}
+
+ul.postlist {
+    display: flex;
+}
+
+li.postitem {
+    list-style: none;
+    width: 96%;
+    height: 300px;
+    display: flex;
+    background-color: aqua;
+    justify-content: center;
+    align-items: center;
 }
 
 
