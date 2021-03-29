@@ -10,7 +10,7 @@ import Jobs from './components/Body/Jobs';
 import Questions from './components/Body/Questions';
 import jwt_decode from 'jwt-decode';
 import Profile from './components/Dashboard/Profile';
-console.log(process.env.REACT_APP_SERVER_URL);
+import Userprofile from './components/Profile/Userprofile';
 
 
 
@@ -24,7 +24,7 @@ function App() {
     if(token) {
       
       const decoded = jwt_decode(token)
-      console.log(token);
+      
       setCurrentUser(decoded)
     } else {
       
@@ -73,8 +73,7 @@ function App() {
         </Route>
 
         <Route path="/dashboard/:id">
-          <JumboTextTwo />
-          <Profile />
+          <Userprofile currentUser={currentUser} setCurrentUser={setCurrentUser} />
         </Route>
       </Switch>
     </Router>

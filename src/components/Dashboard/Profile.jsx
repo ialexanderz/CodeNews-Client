@@ -2,30 +2,33 @@ import React, { Component, useState, useEffect } from 'react'
 import { Container, Row, Col } from 'bootstrap-4-react';
 import News from '../Articles/News';
 import Postform from '../Forms/Form';
-import Post from '../Posts/Post/Post'
+import Posts from '../Posts/Posts';
 import axios from 'axios';
 
 
 export default class Profile extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
+    console.log(this.props)
 
     this.state = {
-      user: "tdb",
-      posts: "tbd",
-      
+      posts: [{}]
+
     }
   }
 
-  componentDidMount = () => {
-    axios.get(`${process.env.REACT_APP_SERVER_URL}/`).then(response => {
+  componentDidMount = (props) => {
+    axios.get(`${process.env.REACT_APP_SERVER_URL}/posts`).then(response => {
+      console.log(response)
       this.setState({
-        user: response.data.userid
+        posts: response.data
       });
     })
   };
 
   render() {
+   console.log(this.state.posts)
+  
     return (
       <>
         <Container id="bodycontainer2" className="container">
@@ -33,21 +36,18 @@ export default class Profile extends Component {
           <Col className="newscolumn2" col="12 sm-6 md-8">
               <div className="profdiv"> 
                     <div className="profilecols">
-                        <p>Hello from Profile</p>
+                        <p>Holds Username</p>
                     </div>
                     <div className="profilecols">
-                    <p>Hello two from Profile</p>
+                    <p>Number of Posts</p>
                     </div>
                     <div className="profilecols">
-                    <p>Hello three from Profile</p>
+                    <p>TBD</p>
                     </div>
               </div>
               {/* From Post */}
               <div>
-                < Post />
-              </div>
-              <div>
-                < Post />
+                <Posts currentUser={this.props.currentUser} currentPost={this.state.posts} />
               </div>
           </Col>
           <Col className="contentcolumn" col="6 md-3">

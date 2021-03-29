@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Container, Row, Col, Form, Button } from 'bootstrap-4-react';
 import jwt_decode from 'jwt-decode';
 import { Redirect } from 'react-router-dom';
-import Profile from '../Dashboard/Profile';
+import Userprofile from '../Profile/Userprofile';
 
 
 export default function UserAuth(props) {
@@ -14,6 +14,7 @@ export default function UserAuth(props) {
   const [confirmpassword, setConfirmpassword] = useState('');
   const [loginemail, setLoginemail] = useState('');
   const [loginpassword, setLoginpassword] = useState('');
+  const [userid, setUserid] = useState("");
 
   // Error msg
   const [message, setMessage] = useState('');
@@ -36,8 +37,11 @@ export default function UserAuth(props) {
 
 
       const  token = registerResponse.data.token;
-      console.log(token)
       localStorage.setItem('jwtToken', token);
+
+      const userRigisterId = registerResponse.data.userId;
+      setUserid(userRigisterId);
+
 
       const registerdecoded = jwt_decode(token);
       console.log(registerdecoded);
@@ -71,6 +75,9 @@ export default function UserAuth(props) {
       const token = loginResponse.data.token;
       localStorage.setItem('jwtToken', token);
 
+      const userLoginId = loginResponse.data.userId;
+      setUserid(userLoginId);
+
       const logindecoded = jwt_decode(token);
 
 
@@ -89,7 +96,7 @@ export default function UserAuth(props) {
     }
   }
 
-  if (props.currentUser) return <Redirect to='Profile' component={Profile} currentUser={props.currentUser} />
+  if (props.currentUser) return <Redirect to={`/dashboard/${userid}`} component={Userprofile} currentUser={props.currentUser} />
 
   return (
     <Container>
