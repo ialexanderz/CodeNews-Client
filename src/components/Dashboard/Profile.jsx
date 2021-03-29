@@ -27,7 +27,6 @@ export default class Profile extends Component {
   };
 
   render() {
-   console.log(this.state.posts)
   
     return (
       <>
@@ -36,14 +35,14 @@ export default class Profile extends Component {
           <Col className="newscolumn2" col="12 sm-6 md-8">
               <div className="profdiv"> 
                     <div className="profilecols">
-                        <p>Holds Username</p>
+                        <p># of Questions: 12</p>
                     </div>
                     <div className="profilecols">
-                    <p>Number of Posts</p>
+                    <p>Responses: 3</p>
                     </div>
-                    <div className="profilecols">
+                    {/* <div className="profilecols">
                     <p>TBD</p>
-                    </div>
+                    </div> */}
               </div>
               {/* From Post */}
               <div>
