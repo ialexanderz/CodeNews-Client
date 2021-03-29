@@ -2,26 +2,22 @@ import React from 'react';
 import {useEffect, useState} from 'react';
 import { Container, Row, Col } from 'bootstrap-4-react';
 import axios from 'axios';
+const REACT_APP_NEWS_ARTICLE_API = process.env.REACT_APP_NEWS_ARTICLE_API
 
 export default function Post(props) {
-    console.log(props)
-    
 
-    // useEffect(() => {
-    //     fetch(`${process.env.REACT_APP_SERVER_URL}/posts/:id`).then(res => {  
-    //         if (res.ok) {
-    //             console.log(res)
-    //             return res.json()
-    //         }
-    //     }).then(jsonRes => setPosts(jsonRes));
-    // }, [])
-    // console.log(posts)
-const displayPost = props.currentPost.map((post) => {
+const displayPost = props.currentPost.map((post,idx) => {
     return (
         <>
-            <h1>{post.title}</h1>
-            <p>{post.post_content}</p>
+        <div className="possteddivs">
             {/* <img src={post.selectedFile} alt="file-selected" /> */}
+            <h1 className="postmate">{post.title}</h1>
+            <p className="postmate">{post.post_content}</p>
+            <ul className="postlist">
+                <li className="poster">Read more</li>
+                {/* <li className="poster">Delete</li> */}
+            </ul>
+        </div>
         </>
 
     )
@@ -29,9 +25,7 @@ const displayPost = props.currentPost.map((post) => {
 })
     return (
     <div>
-        <h1>Hello</h1> 
-            <div>
-                
+            <div className="postdisplay"> 
                { displayPost }
             </div>
     </div>

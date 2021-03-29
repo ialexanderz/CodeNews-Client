@@ -19,6 +19,17 @@ export default function Postform(){
     }
     axios.post(`${process.env.REACT_APP_SERVER_URL}/posts`, newPost)
   }
+
+  function refreshPage() {
+
+		window.location.reload(false);
+
+	}
+
+
+
+
+
     return (
         <>
         <Form onSubmit={handleSubmit}>
@@ -48,7 +59,7 @@ export default function Postform(){
               value={selectedFile} 
               id="upload"/>
             </Form.Group>
-            <button className="postsubmit" type="submit">Submit</button>
+            <button onClick={refreshPage} className="postsubmit" type="submit">Submit</button>
       </Form>
         </>
       

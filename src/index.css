@@ -51,6 +51,10 @@ div#navbarColor1 {
     display: flex;
 }
 
+.possteddivs {
+    box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+}
+
 .row.rowstyles {
     margin: 20px;
     display: flex;
@@ -73,7 +77,6 @@ div#navbarColor1 {
     color: #fff;
     width: 600px;
     text-align: center;
-    background-image: url(https://techcrunch.com/wp-content/uploads/2021/03/Apple_expands-free-professional-learning-to-help-teachers-champion-creativity_032321_big.jpg.large_2x.jpg?w=1390&crop=1);
     height: 600px;
     opacity: 0.7;
     background-size: contain;
@@ -81,6 +84,15 @@ div#navbarColor1 {
     text-shadow: 2px 2px 4px #000000;
     border-radius: 50%;
     border: 13px solid #fff;
+    display: contents;
+}
+
+img.headerimage {
+    width: 99%;
+    height: 485px;
+    border: 9px #fff solid;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .row.rowstyles {
@@ -92,7 +104,7 @@ div#navbarColor1 {
 #bodycontainer{
     max-width: 90%;
     background-color: #EFEFEF;
-    height: 900px;
+    /* height: 900px; */
     border-radius: 10px;
 }
 
@@ -106,6 +118,19 @@ div#navbarColor1 {
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+.row.technews {
+    width: 406px;
+    height: 282px;
+    background-color: bisque;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.row.tech{
+    justify-content: center;
 }
 
 .contentcolumn{
@@ -204,22 +229,102 @@ input.commentform, textarea#content {
 
 ul.postlist {
     display: flex;
+    justify-content: flex-end;
 }
 
-li.postitem {
+.postdisplay {
+    overflow-x: hidden;
+}
+
+li.poster {
+    margin: 20px 4px;
     list-style: none;
-    width: 96%;
-    height: 300px;
+    height: 15px;
     display: flex;
-    background-color: aqua;
+    justify-content: flex-end;
+    background-color: #D6D6DB;
+    color: #9C9C9C;
+    border-radius: 9px;
+    align-items: center;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    cursor: pointer;
+}
+
+.postmate {
+    position: relative;
+    left: 4%;
+    top: 20px;
+}
+
+li.technewsitem {
+    width: 30%;
+    height: 300px;
+    margin: 10px;
+    background-color: aliceblue;
+    list-style: none;
+}
+
+
+
+
+a.visit {
+    color: #000;
+    font-size: 16px;
+}
+
+span.urllink {
+    width: 83px;
+    display: flex;
     justify-content: center;
     align-items: center;
+    padding: 4px;
+    box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
+    margin: 10px;
 }
 
+.technewslist {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px 20px;
+    width: 80%;
+    box-shadow: rgb(50 50 93 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 0px 8px 16px -8px;
+}
 
+h1.headtitle {
+    font-size: 3rem;
+    color: #fff;
+}
 
+img.techimage {
+    width: 200px;
+    margin: 7px;
+    box-shadow: rgb(0 0 0 / 25%) 0px 25px 50px -12px;
+}
 
+a.visit2 {
+    color: #fff;
+}
 
+span.headescription {
+    color: #fff;
+}
+
+.technewslist2 {
+    position: relative;
+    top: 14%;
+}
+
+li.technewsitem {
+    width: 30%;
+    height: 300px;
+    margin: 10px;
+    background-color: aliceblue;
+    list-style: none;
+    padding: 20px;
+}
 /* Media Queries */
 
 @media screen and (max-width: 1276px) {

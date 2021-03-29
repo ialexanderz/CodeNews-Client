@@ -9,9 +9,14 @@ import { Link } from 'react-router-dom';
 
 function HeaderNavbar(props) {
   const loggedIn = (
+    <>
+    <Nav.ItemLink href="#">
+      Profile
+    </Nav.ItemLink>
     <Nav.ItemLink onClick={props.handleLogout} href="#">
       Logout
     </Nav.ItemLink>
+    </>
   )
   const loggedOut = (
     <Nav.ItemLink href="/signup">Sign up | Login</Nav.ItemLink>
@@ -24,7 +29,6 @@ function HeaderNavbar(props) {
           <Nav pills flex="column sm-row" className="navclass">
           <Nav.ItemLink href="/">Main</Nav.ItemLink>
           <Nav.ItemLink href="/questions">Ask a Techie</Nav.ItemLink>
-          <Nav.ItemLink href="/jobs">Jobs</Nav.ItemLink>
           {props.currentUser ? loggedIn  : loggedOut}
          </Nav>
         </Collapse>
