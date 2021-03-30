@@ -59,7 +59,7 @@ export default class Body extends Component {
                             <div key={idx} className="technewslist2">
                             <h1 className="headtitle">{item.title}</h1>
                             <span className="headescription">{item.description}</span>
-                            <span className="urllink"><Link exact to={item.url} className="visit2">Visit</Link></span>
+                           <span className="urllink"><a href={item.url} target="_blank" className="visit2">Visit</a></span>
                             </div>
                         )).slice(0,1)
                         }
